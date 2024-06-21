@@ -45,6 +45,7 @@ if(isset($_POST['submit'])) {
 
 <head>
     <title>Blood Bank Donar Management System | About Us </title>
+    <link rel="icon" href="images/healthyheart.png">
     <!-- Meta tag Keywords -->
     
     <script>

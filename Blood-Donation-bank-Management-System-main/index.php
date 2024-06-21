@@ -134,7 +134,7 @@ include('includes/config.php');
             </div>
         </div>
     </div>
-    <!-- //treatments -->
+
 
     <!-- footer -->
     <?php include('includes/footer.php'); ?>

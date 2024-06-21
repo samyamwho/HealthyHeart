@@ -98,8 +98,6 @@ if(isset($_POST['send'])) {
 
 		</div>
 	</div>
-	<!-- //contact -->
-
 	
 
 

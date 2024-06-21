@@ -21,6 +21,7 @@ else{
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
+	<link rel="icon" href="images/healthyheart.png">
 	
 	<title>BBDMS | Donor List  </title>
 
@@ -100,56 +101,40 @@ else{
                                        
                                         <tr>
 										<?php
-$sql="SELECT tblbloodrequirer.BloodDonarID,tblbloodrequirer.name,tblbloodrequirer.EmailId,tblbloodrequirer.ContactNumber,tblbloodrequirer.BloodRequirefor,tblbloodrequirer.Message,tblbloodrequirer.ApplyDate,tblblooddonars.id as donid,tblblooddonars.FullName,tblblooddonars.MobileNumber from  tblbloodrequirer join tblblooddonars on tblblooddonars.id=tblbloodrequirer.BloodDonarID where tblblooddonars.FullName like '%$sdata%' || tblblooddonars.MobileNumber like '%$sdata%'";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
-$results = $stmt->get_result();
-$cnt=1;
-if($results->num_rows > 0)
-{
-    while($row = $results->fetch_assoc())
-    {				
-?>
+											$sql="SELECT tblbloodrequirer.BloodDonarID,tblbloodrequirer.name,tblbloodrequirer.EmailId,tblbloodrequirer.ContactNumber,tblbloodrequirer.BloodRequirefor,tblbloodrequirer.Message,tblbloodrequirer.ApplyDate,tblblooddonars.id as donid,tblblooddonars.FullName,tblblooddonars.MobileNumber from  tblbloodrequirer join tblblooddonars on tblblooddonars.id=tblbloodrequirer.BloodDonarID where tblblooddonars.FullName like '%$sdata%' || tblblooddonars.MobileNumber like '%$sdata%'";
+											$stmt = $conn->prepare($sql);
+											$stmt->execute();
+											$results = $stmt->get_result();
+											$cnt=1;
+											if($results->num_rows > 0)
+											{
+												while($row = $results->fetch_assoc())
+												{				
+											?>
                                             <td><?php echo htmlentities($cnt);?></td>
                                             <td><?php  echo htmlentities($row['FullName']);?></td>
                                             <td><?php  echo htmlentities($row['MobileNumber']);?></td>
 											<td><?php  echo htmlentities($row['name']);?></td>
-
-
 											<td><?php  echo htmlentities($row['ContactNumber']);?></td>
 											<td><?php  echo htmlentities($row['EmailId']);?></td>
 											<td><?php  echo htmlentities($row['BloodRequirefor']);?></td>
-                                          
-                     
 											<td><?php  echo htmlentities($row['Message']);?> 
-											</td>
-														
-																		<td>
-																		<?php  echo htmlentities($row['ApplyDate']);?>  
-																		</td>
-																	</tr>
-                                    <?php $cnt=$cnt+1;}}?>
-                            
-                             
+											</td>			
+												<td>
+												<?php  echo htmlentities($row['ApplyDate']);?>  
+												</td>
+											</tr>
+                                   		 <?php $cnt=$cnt+1;}}?>
                                     </tbody>
                                 </table>
-
-						
-
 							</div>
 						</div>
-
-					
-
 					</div>
 				</div>
 
 			</div>
 		</div>
 	</div>
-
-	<!-- Loading Scripts -->
-
 </body>
 </html>
 <?php } ?>

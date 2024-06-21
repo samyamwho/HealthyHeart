@@ -36,6 +36,7 @@ if(isset($_POST['submit']))
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
+	<link rel="icon" href="images/healthyheart.png">
 	
 	<title>BBDMS | Admin Change Password</title>
 

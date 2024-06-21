@@ -51,6 +51,9 @@ if($stmt->affected_rows > 0) {
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="images/healthyheart.png">
+
+	
   <style>
 		.errorWrap {
     padding: 10px;

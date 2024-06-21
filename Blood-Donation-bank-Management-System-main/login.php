@@ -53,7 +53,7 @@ if(isset($_POST['login'])) {
 
 
 
-	<script src="jquery/jquery.js"></script>
+	
 <script type="text/javascript" src='js/bootstrap.min.js'></script>
 <link rel="stylesheet" href="css/bootstrap.css" />
 
@@ -79,14 +79,12 @@ if(isset($_POST['login'])) {
 <?php include('includes/top.php'); ?>
 	<?php include('includes/header.php');?>
 
-	<!-- banner 2 -->
+
 	<div class="inner-banner-w3ls">
 		<div class="container">
 
 		</div>
-		<!-- //banner 2 -->
 	</div>
-	<!-- page details -->
 	<div class="breadcrumb-agile mt-4">
 		<div aria-label="breadcrumb">
 			<ol class="breadcrumb">
@@ -97,9 +95,8 @@ if(isset($_POST['login'])) {
 			</ol>
 		</div>
 	</div>
-	<!-- //page details -->
 
-	<!-- about -->
+
 	<section class="about py-5">
 		<div class="container py-xl-5 py-lg-3">
 <div class="login px-4 mx-auto mw-100">
@@ -114,9 +111,6 @@ if(isset($_POST['login'])) {
                                     <input type="password" class="form-control" name="password" id="password" placeholder="" required="">
                                 </div>
                                 <button type="submit" class="btn submit mb-4" name="login">Login</button>
-                            <!--     <p class="forgot-w3ls text-center pb-4">
-                                    <a href="#" class="text-white">Forgot your password?</a>
-                                </p> -->
                                 <p class="account-w3ls text-center pb-4" style="color:#000">
                                     Don't have an account?
                                     <a href="sign-up.php" >Create one now</a>
@@ -126,20 +120,7 @@ if(isset($_POST['login'])) {
 			
 		</div>
 	</section>
-	<!-- //about -->
-
-
-
-	<?php include('includes/footer.php');?>
-
-
-	<!-- Js files -->
-	<!-- JavaScript -->
-	<script src="js/jquery-2.2.3.min.js"></script>
-	<!-- Default-JavaScript-File -->
-
-	<!-- banner slider -->
-	<script src="js/responsiveslides.min.js"></script>
+<?php include('includes/footer.php');?>
 	<script>
 		$(function () {
 			$("#slider4").responsiveSlides({
@@ -157,26 +138,5 @@ if(isset($_POST['login'])) {
 			});
 		});
 	</script>
-	<!-- //banner slider -->
-
-	<!-- fixed navigation -->
-	<script src="js/fixed-nav.js"></script>
-	<!-- //fixed navigation -->
-
-	<!-- smooth scrolling -->
-	<script src="js/SmoothScroll.min.js"></script>
-	<!-- move-top -->
-	<script src="js/move-top.js"></script>
-	<!-- easing -->
-	<script src="js/easing.js"></script>
-	<!--  necessary snippets for few javascript files -->
-	<script src="js/medic.js"></script>
-
-	<script src="js/bootstrap.js"></script>
-	<!-- Necessary-JavaScript-File-For-Bootstrap -->
-
-	<!-- //Js files -->
-
 </body>
-
 </html>

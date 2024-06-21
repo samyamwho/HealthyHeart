@@ -9,6 +9,7 @@
     <meta name="author" content="">
     <meta name="theme-color" content="#3e454c">
     <title>Healthy Heart | Admin Dashboard</title>
+    <link rel="icon" href="images/healthyheart.png">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">

@@ -23,6 +23,7 @@ else{
 	<meta name="theme-color" content="#3e454c">
 	
 	<title>BBDMS | Donor List  </title>
+	<link rel="icon" href="images/healthyheart.png">
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">

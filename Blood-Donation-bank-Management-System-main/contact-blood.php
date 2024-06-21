@@ -143,5 +143,4 @@ $conn->close();
 
     <?php include('includes/footer.php');?>
 
-    <!-- JavaScript for Smooth Scrolling and Back-to-Top Button -->
    

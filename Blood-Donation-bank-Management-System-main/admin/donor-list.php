@@ -54,6 +54,7 @@ if(strlen($_SESSION['alogin'])==0) {
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="theme-color" content="#3e454c">
+    <link rel="icon" href="images/healthyheart.png">
     
     <title>BBDMS | Donor List</title>
 

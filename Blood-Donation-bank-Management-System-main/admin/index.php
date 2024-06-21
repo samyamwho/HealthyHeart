@@ -29,6 +29,7 @@ if (isset($_POST['login'])) {
     <meta name="description" content="">
     <meta name="author" content="">
     <title>BloodBank & Donor Management System | Admin Login</title>
+    <link rel="icon" href="images/healthyheart.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         .vh-100 {

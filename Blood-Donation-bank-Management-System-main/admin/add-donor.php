@@ -55,6 +55,7 @@ if(strlen($_SESSION['alogin']) == 0) {
     <meta name="theme-color" content="#3e454c">
     
     <title>BBDMS | Admin Add Donor</title>
+    <link rel="icon" href="images/healthyheart.png">
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -72,6 +73,7 @@ if(strlen($_SESSION['alogin']) == 0) {
     <link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
     <!-- Admin Style -->
     <link rel="stylesheet" href="css/style.css">
+
     <style>
         .errorWrap {
             padding: 10px;

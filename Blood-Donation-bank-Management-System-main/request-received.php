@@ -12,79 +12,68 @@ if (strlen($_SESSION['bbdmsdid']) == 0) {
 
 <head>
     <title>Blood Bank Donar Management System !! Request Received</title>
+    <link rel="icon" href="images/healthyheart.png">
 
     <script>
-        addEventListener("load", function () {
+        window.addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
-        }, false);
+        });
 
         function hideURLbar() {
             window.scrollTo(0, 1);
         }
-    </script>
-    <script type="text/javascript">
+
         function checkpass() {
-            if (document.changepassword.newpassword.value != document.changepassword.confirmpassword.value) {
+            var newPassword = document.changepassword.newpassword.value;
+            var confirmPassword = document.changepassword.confirmpassword.value;
+            if (newPassword !== confirmPassword) {
                 alert('New Password and Confirm Password field does not match');
                 document.changepassword.confirmpassword.focus();
                 return false;
             }
             return true;
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var datepickers = document.querySelectorAll("#datepicker, #datepicker1");
+            datepickers.forEach(function (datepicker) {
+                datepicker.addEventListener("focus", function () {
+                    new VanillaDatepicker(datepicker);
+                });
+            });
+        });
+
+        function VanillaDatepicker(element) {
+            var input = element;
+            input.addEventListener("click", function () {
+                var datepicker = document.createElement("input");
+                datepicker.type = "date";
+                datepicker.addEventListener("change", function () {
+                    input.value = datepicker.value;
+                    datepicker.remove();
+                });
+                input.parentNode.insertBefore(datepicker, input.nextSibling);
+                datepicker.focus();
+            });
+        }
     </script>
-
-
-    <!-- jQuery library -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-
-    <!-- Popper JS library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script type="text/javascript" src='js/bootstrap.js'></script>
-
-    <script src="Scripts/umd/popper.min.js"></script>
-
-    <!-- Custom-Files -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <!-- Bootstrap-Core-CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-    <!-- Style-CSS -->
     <link rel="stylesheet" href="css/fontawesome-all.css">
-    <!-- Font-Awesome-Icons-CSS -->
-    <!-- //Custom-Files -->
-
-    <!-- Web-Fonts -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
         rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
         rel="stylesheet">
-    <!-- //Web-Fonts -->
-
 </head>
 
 <body>
     <?php include('includes/header.php');?>
 
-    <!-- banner 2 -->
     <div class="inner-banner-w3ls">
         <div class="container">
 
         </div>
-        <!-- //banner 2 -->
     </div>
-    <!-- page details -->
-    <!-- <div class="breadcrumb-agile">
-        <div aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="index.php">Home</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">Request Received</li>
-            </ol>
-        </div>
-    </div> -->
-    <!-- //page details -->
-
-    <!-- contact -->
     <div class="appointment py-5">
         <div class="py-xl-5 py-lg-3">
             <div class="w3ls-titles text-center mb-5">
@@ -94,7 +83,6 @@ if (strlen($_SESSION['bbdmsdid']) == 0) {
                 </span>
             </div>
             <div class="d-flex">
-
                 <div class="contact-right-w3l appoint-form" style="width:100% !important;">
                     <h5 class="title-w3 text-center mb-5">Below is the detail of Blood Requirer.</h5>
                     <table border="1" class="table table-bordered">
@@ -109,9 +97,7 @@ if (strlen($_SESSION['bbdmsdid']) == 0) {
                                 <th>Apply Date</th>
                             </tr>
                         </thead>
-
                         <tbody>
-
                             <tr>
                                 <?php
                                 $uid = $_SESSION['bbdmsdid'];
@@ -129,7 +115,6 @@ if (strlen($_SESSION['bbdmsdid']) == 0) {
                                 ?>
                                         <td><?php echo htmlentities($cnt); ?></td>
                                         <td><?php echo htmlentities($row['name']); ?></td>
-                                       
                                         <td><?php echo htmlentities($row['ContactNumber']); ?></td>
                                         <td><?php echo htmlentities($row['EmailId']); ?></td>
                                         <td><?php echo htmlentities($row['BloodRequirefor']); ?></td>
@@ -148,27 +133,15 @@ if (strlen($_SESSION['bbdmsdid']) == 0) {
                         </tbody>
                     </table>
                 </div>
-                <div class="clerafix"></div>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>
-    <!-- //contact -->
 
     <?php include('includes/footer.php');?>
+
     <!-- Js files -->
-    <!-- JavaScript -->
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <!-- Default-JavaScript-File -->
-
-    <!--start-date-piker-->
-    <link rel="stylesheet" href="css/jquery-ui.css" />
-    <script src="js/jquery-ui.js"></script>
-    <script>
-        $(function () {
-            $("#datepicker,#datepicker1").datepicker();
-        });
-    </script>
-
+    <script src="js/bootstrap.js"></script>
 </body>
 
 </html>

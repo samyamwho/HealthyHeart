@@ -45,6 +45,7 @@ else{
 	<meta name="theme-color" content="#3e454c">
 	
 	<title>BBDMS | Admin Change Password</title>
+	<link rel="icon" href="images/healthyheart.png">
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -169,7 +170,6 @@ return true;
 		</div>
 	</div>
 
-	<!-- Loading Scripts -->
 
 </body>
 

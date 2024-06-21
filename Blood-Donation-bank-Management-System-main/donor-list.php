@@ -1,10 +1,11 @@
 <?php
+session_start();
 error_reporting(0);
 include('includes/config.php');
 ?>
 
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
     <title>Blood Bank Donor Management System | Blood Donor List </title>
@@ -41,6 +42,25 @@ include('includes/config.php');
         body {
             overflow-x: hidden;
         }
+        .donor-card {
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #f9f9f9;
+            margin-bottom: 30px;
+        }
+        .donor-card img {
+            border: 1px solid #000;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        .donor-card h3 {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
     </style>
 
 </head>
@@ -55,12 +75,9 @@ include('includes/config.php');
                     <i class="fas fa-user-md"></i>
                 </span>
             </div>
-            <div class="card">
-                <div class="row package-grids mt-5" style="padding-left: 50px;">
-                <?php
-                    session_start();
-                    error_reporting(0);
-                    include('includes/config.php');
+            <div class="container">
+                <div class="row">
+                    <?php
                     $status = 1;
                     $sql = "SELECT * FROM tblblooddonars WHERE status = ?";
                     $stmt = $conn->prepare($sql);
@@ -69,17 +86,14 @@ include('includes/config.php');
                     $result = $stmt->get_result();
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) { ?>
-                            <div class="col-lg-3 col-md-4 col-sm-6 pricing" style="margin-bottom: 20px;">
-                                <div class="price-top">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="donor-card">
                                     <?php if (!empty($row['ImagePath'])) { ?>
-                                        <?php echo htmlentities($row['ImagePath']); ?>;
-                                        <img src="admin/<?php echo htmlentities($row['ImagePath']); ?>" alt="<?php echo htmlentities($row['FullName']); ?>" style="border: 1px solid #000; width: 200px; height: 200px;" class="img-fluid" />
+                                        <img src="admin/<?php echo htmlentities($row['ImagePath']); ?>" alt="<?php echo htmlentities($row['FullName']); ?>" class="img-fluid" />
                                     <?php } else { ?>
-                                        <img src="images/image.png" alt="Blood Donor" style="border: 1px solid #000; width: 200px; height: 200px;" class="img-fluid" />
+                                        <img src="images/samyam.png" alt="Blood Donor" class="img-fluid" />
                                     <?php } ?>
-                                    <h3 style="font-size: 1.2em; margin-top: 10px;"><?php echo htmlentities($row['FullName']);?></h3>
-                                </div>
-                                <div class="price-bottom p-2" style="font-size: 0.9em;">
+                                    <h3><?php echo htmlentities($row['FullName']);?></h3>
                                     <table class="table table-bordered mb-0">
                                         <tbody>
                                             <tr>
@@ -119,7 +133,6 @@ include('includes/config.php');
                     }
                     $stmt->close();
                     ?>
-
                 </div>
             </div>
         </div>

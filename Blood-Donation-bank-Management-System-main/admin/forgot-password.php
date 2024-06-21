@@ -34,6 +34,7 @@ if(isset($_POST['submit']))
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
+	<link rel="icon" href="images/healthyheart.png">
 
 	<title>BloodBank & Donor Management System | Forgot Password</title>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
